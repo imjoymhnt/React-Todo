@@ -31,13 +31,27 @@ export default class App extends Component {
     });
   };
   handleDelete = (id) => {
-    console.log("handle Delete");
+    const newItems = this.state.items.filter((item) => item.id !== id);
+    this.setState({
+      items: newItems,
+    });
   };
+
+  handleEdit = (id) => {
+    const filteredItem = this.state.items.filter((item) => item.id !== id);
+    const selectedItem = this.state.items.find((item) => item.id === id);
+    this.setState({
+      items: filteredItem,
+      item: selectedItem.title,
+      id: id,
+      editItem: true,
+    });
+  };
+
   clearList = () => {
-    console.log("Clear List");
-  };
-  handleEdit = () => {
-    console.log("Handle Edit");
+    this.setState({
+      items: [],
+    });
   };
   render() {
     return (
