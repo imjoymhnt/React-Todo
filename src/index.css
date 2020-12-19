@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+body {
+  background-image: url("undraw_to_do_xvvc.svg");
+  background-color: #cccccc;
+}
